@@ -30,7 +30,7 @@ jobs:
         with:
           access_token: ${{ github.token }}
       - id: image-build
-        uses: bennibacktbackwaren/custom-manjaro-iso-profiles@main
+        uses: bennibacktbackwaren/custom-manjaro-iso-action@main
         with:
           edition: ${{ matrix.edition }}
           branch: ${{ matrix.branch }}
