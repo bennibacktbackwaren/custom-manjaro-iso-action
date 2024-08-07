@@ -1,4 +1,9 @@
 name: 'iso_build'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+
 on:
   workflow_dispatch:
 
@@ -6,9 +11,6 @@ jobs:
   prepare-release:
     runs-on: ubuntu-20.04
     steps:
-      - uses: styfle/cancel-workflow-action@0.10.1
-        with:
-          access_token: ${{ github.token }}
       - id: time
         uses: nanzm/get-time-action@v1.1
         with:
@@ -26,9 +28,6 @@ jobs:
         SCOPE: [full]
         ###################       
     steps:
-      - uses: styfle/cancel-workflow-action@0.10.1
-        with:
-          access_token: ${{ github.token }}
       - id: image-build
         uses: bennibacktbackwaren/custom-manjaro-iso-action@main
         with:
@@ -37,7 +36,7 @@ jobs:
           scope: ${{ matrix.scope }}
           version: "r${{ needs.prepare-release.outputs.release_tag }}"
           kernel: linux66
-          code-name: "Sikaris"
+          code-name: "Mangio"
           release-tag: ${{ needs.prepare-release.outputs.release_tag }}
       - name: rollback
         if: ${{ failure() || cancelled() }}
