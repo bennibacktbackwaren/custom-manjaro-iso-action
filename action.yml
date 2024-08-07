@@ -5,10 +5,11 @@ inputs:
   iso-profiles-repo:
     description: 'iso profiles to clone'
     required: false
-    default: 'https://gitlab.manjaro.org/profiles-and-settings/iso-profiles'
+    default: 'https://github.com/bennibacktbackwaren/custom-manjaro-iso-profiles'
   iso-profiles-branch:
     description: 'branch of the iso profiles to check out'
     required: false
+    default: 'main'
   edition:
     description: 'name of the iso profile to build'
     required: true
@@ -26,7 +27,7 @@ inputs:
   kernel:
     description: 'kernel version'
     required: false
-    default: linux510
+    default: linux66
   code-name:
     description: 'manjaro code-name (upstream if not given)'
     required: false
