@@ -38,7 +38,6 @@ jobs:
           version: "r${{ needs.prepare-release.outputs.release_tag }}"
           kernel: linux66
           code-name: "Sikaris"
-          build-mirror: ${{ secrets.BUILD_MIRROR }}
           release-tag: ${{ needs.prepare-release.outputs.release_tag }}
       - name: rollback
         if: ${{ failure() || cancelled() }}
