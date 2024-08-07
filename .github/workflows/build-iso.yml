@@ -1,6 +1,5 @@
 name: 'build-iso'
-on:
-  pull_request:
+on: [workflow_dispatch]
 
 env:
   ##### EDIT ME #####
