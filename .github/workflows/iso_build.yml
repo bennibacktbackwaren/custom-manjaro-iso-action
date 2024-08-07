@@ -1,8 +1,14 @@
 name: 'iso_build'
 
+# Disallow multiple parallel runs
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+
+# Allow the upload of releases
+permissions:
+  contents: write
+  packages: write
 
 on:
   workflow_dispatch:
