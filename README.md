@@ -1,6 +1,7 @@
-# manjaro-iso-action
+# custom-manjaro-iso-action
 
-Tooling to build and distribute Manjaro on via Github Actions
+Build my custom Manjaro ISO using GitHub Actions.
+Cloned from [https://github.com/manjaro/manjaro-iso-action](https://github.com/manjaro/manjaro-iso-action).
 
 ## Usage example
 
