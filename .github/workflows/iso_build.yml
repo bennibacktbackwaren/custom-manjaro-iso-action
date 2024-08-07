@@ -35,11 +35,9 @@ jobs:
           edition: ${{ matrix.edition }}
           branch: ${{ matrix.branch }}
           scope: ${{ matrix.scope }}
-          version: "22.0.r${{ needs.prepare-release.outputs.release_tag }}"
+          version: "r${{ needs.prepare-release.outputs.release_tag }}"
           kernel: linux66
           code-name: "Sikaris"
-          custom-repo: "plasma-5.24-lts"
-          custom-repo-url: 'Server = https:\/\/manjaro.github.io\/plasma-5.24-lts\/x86_64'
           build-mirror: ${{ secrets.BUILD_MIRROR }}
           release-tag: ${{ needs.prepare-release.outputs.release_tag }}
       - name: rollback
